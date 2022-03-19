@@ -1,0 +1,19 @@
+user@M001# mongo "mongodb+srv://sandbox.u5aiy.mongodb.net/myFirstDatabase" --username m001-student
+MongoDB shell version v4.4.3
+Enter password: 
+connecting to: mongodb://sandbox-shard-00-00.u5aiy.mongodb.net:27017,sandbox-shard-00-01.u5aiy.mongodb.net:27017,sandbox-shard-00-02.u5aiy.mongodb.net:27017/myFirstDatabase?authSource=admin&compressors=disabled&gssapiServiceName=mongodb&replicaSet=atlas-12o8y5-shard-0&ssl=true
+Implicit session: session { "id" : UUID("3679e2f5-a9a9-4de4-bdad-9d8fc9bd046b") }
+MongoDB server version: 5.0.6
+WARNING: shell and server versions do not match
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+MongoDB Enterprise atlas-12o8y5-shard-0:PRIMARY> use sample_training
+switched to db sample_training
+MongoDB Enterprise atlas-12o8y5-shard-0:PRIMARY> db.trips.find({"birth year":1961,"start station name":"Howard St & Centre St"})
+{ "_id" : ObjectId("572bb8222b288919b68abf5b"), "tripduration" : 889, "start station id" : 268, "start station name" : "Howard St & Centre St", "end station id" : 3002, "end station name" : "South End Ave & Liberty St", "bikeid" : 22794, "usertype" : "Subscriber", "birth year" : 1961, "start station location" : { "type" : "Point", "coordinates" : [ -73.99973337, 40.71910537 ] }, "end station location" : { "type" : "Point", "coordinates" : [ -74.015756, 40.711512 ] }, "start time" : ISODate("2016-01-01T00:01:06Z"), "stop time" : ISODate("2016-01-01T00:15:56Z") }
+MongoDB Enterprise atlas-12o8y5-shard-0:PRIMARY> db.inspections.find({"date":"Feb 20 2015"}).count()
+320
