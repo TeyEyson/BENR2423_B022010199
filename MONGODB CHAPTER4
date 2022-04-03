@@ -1,0 +1,47 @@
+Lab1: Comparison Operators
+db.zips.find({"pop":{"$lte":999}}).count()
+8065
+
+Lab2: Comparison Operators
+db.trips.find({"birth year":{"$gt":1998}}).count() - db.trips.find({"birth year":1998}).count()
+6
+
+Quiz1: Logic Operators
+db.inspections.find({"$and":[{"result":"Out of Business"},{"sector":"Home Improvement Contractor - 100"}]}).count()
+4
+
+Quiz2: Logic Operators
+db.inspections.find(
+  { "$or": [ { "date": "Feb 20 2015" },
+             { "date": "Feb 21 2015" } ],
+    "sector": { "$ne": "Cigarette Retail Dealer - 127" }}).pretty()
+    
+Lab1: Logic Operators
+db.zips.find({"pop":{"$gte":5000}},{"pop":{"$lte":1000000}}).count()
+11193
+
+Lab2: Logic Operators
+db.companies.find({"$or":[{"$and":[{"founded_year":2004},{"$or":[{"category_code":"social"},{"category_code":"web"}]}]},{"$and":[{"founded_month":10},{"$or":[{"category_code":"social"},{"category_code":"web"}]}]}]}).count()
+149
+
+Lab: $expr
+db.companies.find({"$expr":{"$eq":["$twitter_username","$permalink"]}}).count()
+1299
+
+Lab1: Array Operators
+db.listingsAndReviews.find({"$and":[{"accommodates":{"$gt":6}},{"reviews":{"$size":50}}]}).pretty()
+
+Lab2: Array Operators
+db.listingsAndReviews.find({"$and":[{"property_type":"House"},{"amenities":{"$all":["Changing table"]}}]}).count()
+
+Lab: Array Operators and Projection
+db.companies.find({"offices":{"$elemMatch":{"city":"Seattle"}}}).count()
+117
+
+Lab1: Querying Arrays and Sub-Documents
+db.trips.find({"start station location.coordinates.0":{"$lt":-74}}).count()
+1928
+
+Lab2: Querying Arrays and Sub-Documents
+db.inspections.find({"address.city":"NEW YORK"}).count()
+18279
