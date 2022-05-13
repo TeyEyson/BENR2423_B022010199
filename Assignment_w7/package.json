@@ -1,0 +1,16 @@
+{
+	"scripts": {
+		"start": "node main.js",
+		"test": "jest"
+	},
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"jest": "^27.5.1",
+		"md5": "^2.3.0",
+		"md6": "^0.0.0",
+		"sha1": "^1.1.1"
+	},
+	"devDependencies": {
+		"@shelf/jest-mongodb": "^2.2.1"
+	}
+}
